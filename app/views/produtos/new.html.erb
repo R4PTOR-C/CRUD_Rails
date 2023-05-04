@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+
+<%= form_for Produto.new do |form| %>
+<div class="container">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Nome</label>
+    <input type="text" name="produto[nome]" class="form-control"  id="formGroupExampleInput" placeholder="Nome">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Descrição</label>
+    <textarea class="form-control" name="produto[descricao]" id="formGroupExampleInput2" placeholder="Descrição"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Preço</label>
+    <input type="number" name="produto[preco]" class="form-control"  id="formGroupExampleInput2" placeholder="R$00,00">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Quantidade</label>
+    <input type="number" name="produto[quantidade]" class="form-control"  id="formGroupExampleInput2" placeholder="0">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Criar</button>
+</div>
+<% end %>
+</body>
+
+</html>
