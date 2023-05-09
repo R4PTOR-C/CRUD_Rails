@@ -35,23 +35,23 @@
 
 
 
-  <div class="container">
-    <h1 style="font-family: 'Blade Runner Movie Font', sans-serif">DESTAQUES</h1>
-    <div class="row row-cols-1 row-cols-sm-4 g-4">
-      <%@produto.each do |produtos| %>
-        <div class="col">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <%=link_to produtos.nome, @nome, class:"card-title"%>
-              <p class="card-text">DESCRIÇÃO</p>
-              <p class="card-text">R$ 000,00</P>
+    <div class="container">
+      <h1 style="font-family: 'Blade Runner Movie Font', sans-serif">DESTAQUES</h1>
+      <div class="row row-cols-1 row-cols-sm-4 g-4">
+        <%@produto.each do |produtos| %>
+          <div class="col">
+            <div class="card h-100">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <%=link_to produtos.nome, @nome, class:"card-title"%>
+                <p class="card-text">DESCRIÇÃO</p>
+                <p class="card-text">R$ 000,00</P>
+              </div>
             </div>
           </div>
+        <%end %>
         </div>
-      <%end %>
-    </div>
-  </div>
+      </div>
 </div>
 
 </body>

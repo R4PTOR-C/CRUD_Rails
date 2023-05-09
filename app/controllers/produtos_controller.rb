@@ -1,13 +1,27 @@
 class ProdutosController < ApplicationController
+
+  before_action :set_produto, only: [:show]
   def index
-    @produtos = Produto.all
+    @produto = Produto.all
+  end
+
+  def new
+    @produto = Produto.new
   end
 
   def create
-    produto = params.require(:produto).permit(:nome, :descricao, :preco, :quantidade)
-    Produto.create produto
-
+    valores = params.require(:produto).permit(:nome, :descricao, :preco, :quantidade, :image)
+    @produto = Produto.new valores
+    if @produto.save
+      flash[:notice] = "produto salvo com sucesso"
+    redirect_to root_url
+    else
+      flash[:error] = "produto não foi salvo"
+      render :new
+      end
   end
+
+
 
   def destroy
     remove_id = params[:id]
@@ -17,8 +31,20 @@ class ProdutosController < ApplicationController
 
   def busca
     @nome = params[:nome]
-    @produtos = Produto.where "nome like ?", "%#{@nome}%"
+    @produto = Produto.where "nome like ?", "%#{@nome}%"
 
 
+  end
+
+  def show
+
+  end
+
+  def set_produto
+    @produto = Produto.find (params[:id])
+  end
+
+  def home
+    @produto = Produto.all
   end
 end

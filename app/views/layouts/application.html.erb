@@ -13,17 +13,13 @@
   <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" <%=link_to 'Loja', root_url %></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/new">Novo</a>
+            <a class="nav-link active" aria-current="page" <%=link_to 'Novo', new_path %></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link active" aria-current="page" <%=link_to 'Thunder', home_path %></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,13 +33,17 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="navbar-brand" <%=link_to 'Loja', root_url %></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </li>
         </ul>
-        <%= form_tag busca_produto_path, method: :get, class:"navbar-form" do %>
+        <%= form_tag busca_produto_path, method: :get, class:"d-flex" do %>
         <form class="d-flex" role="search">
           <input <%= text_field_tag :nome, @nome, class:"form-control me-2" %>
           <button class="btn btn-outline-success" type="submit">Search</button>
+
         </form>
         <% end %>
 

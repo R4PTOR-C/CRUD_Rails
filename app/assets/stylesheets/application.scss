@@ -15,3 +15,25 @@
  *= require sweetalert2
  */
 @import "bootstrap";
+
+
+html{
+  height: 100%;
+}
+body{
+  background-color: black;
+  height: 100%;
+}
+
+.campoProdutos{
+  border-radius: 50px;
+  height: 100%;
+  width: 90%;
+  background-color: white;
+  position: relative;
+
+  left: 5%;
+  right: 5%;
+  top: 10%;
+}
+

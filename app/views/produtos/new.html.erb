@@ -7,7 +7,15 @@
 </head>
 <body>
 
-<%= form_for Produto.new do |form| %>
+
+<%if flash[:error] %>
+  <div class="alert alert-success" role="alert"><%= flash[:error] %></div>
+<%end %>
+
+
+
+
+<%= form_for @produto, html: {multipart: true} do |form| %>
 <div class="container">
   <div class="form-group">
     <label for="formGroupExampleInput">Nome</label>
@@ -25,6 +33,11 @@
     <label for="formGroupExampleInput2">Quantidade</label>
     <input type="number" name="produto[quantidade]" class="form-control"  id="formGroupExampleInput2" placeholder="0">
   </div>
+
+  <div class="field">
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+</div>
   <br>
   <button type="submit" class="btn btn-primary">Criar</button>
 </div>
