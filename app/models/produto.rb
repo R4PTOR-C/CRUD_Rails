@@ -1,5 +1,8 @@
 class Produto < ApplicationRecord
-  mount_uploader :image, ImageUploader
-  serialize :image, JSON
-  validates :preco, presence: true
+
+    has_one_attached :imagem
+
+    attribute :marca, :string
+
+
 end

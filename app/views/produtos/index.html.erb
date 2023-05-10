@@ -21,6 +21,7 @@
       <td>Descrição</td>
       <td>Preço</td>
       <td>Quantidade</td>
+      <td>Marca</td>
       <td>Imagem</td>
       <td>Gerenciamento</td>
     </tr>
@@ -34,7 +35,9 @@
         <td><%=produtos.descricao %></td>
         <td>R$<%=produtos.preco %></td>
         <td><%=produtos.quantidade %></td>
-        <td><%=produtos.image %></td>
+        <td><%=produtos.marca %></td>
+        <td><%=produtos.imagem %></td>
+
         <td>
           <a href="#"> <img src="<%= asset_path('eye.png') %>" width="30px" height="30px"/></a>&emsp;&emsp;
           <a href="#"> <img src="<%= asset_path('edit.png') %>" width="30px" height="30px"/></a>&emsp;&emsp;
